@@ -1,0 +1,4 @@
+# Distribution
+boot_out.txt
+lib/**/*.py
+lib/**/*.mpy
