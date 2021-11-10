@@ -49,10 +49,43 @@ class App:
         macropad.pixels.show()
         macropad.display.refresh()
 
+class Screen:
+    def __init__(self, macropad):
+        self.display = macropad.display
+        self.display.auto_refresh = False
+
+    def sleep(self):
+        self.display.auto_brightness = False
+        self.display.brightness = 0
+        self.display.show(displayio.Group())
+        self.display.refresh()
+
+    def resume(self):
+        self.display.brightness = 1
+        self.display.auto_brightness = True
+        self.display.show(group)
+        self.display.refresh()
+
+class Switches:
+    def __init__(self, macropad):
+        self.pixels = macropad.pixels
+        self.pixels.auto_write = False
+        self.pixels.brightness = 1
+
+    def sleep(self):
+        self.pixels.brightness = 0
+        self.pixels.show()
+
+    def resume(self):
+        self.pixels.brightness = 1
+        self.pixels.show()
 
 # INITIALIZATION -----------------------
 
 macropad = MacroPad()
+screen = Screen(macropad)
+switches = Switches(macropad)
+sleeping = False
 macropad.display.auto_refresh = False
 macropad.pixels.auto_write = False
 
@@ -114,8 +147,8 @@ while True:
     encoder_switch = macropad.encoder_switch_debounced.pressed
     if encoder_switch != last_encoder_switch:
         last_encoder_switch = encoder_switch
-        if len(apps[app_index].macros) < 13:
-            continue    # No 13th macro, just resume main loop
+#        if len(apps[app_index].macros) < 13:
+#            continue    # No 13th macro, just resume main loop
         key_number = 12 # else process below as 13th macro
         pressed = encoder_switch
     else:
@@ -129,7 +162,7 @@ while True:
     # and there IS a corresponding macro available for it...other situations
     # are avoided by 'continue' statements above which resume the loop.
 
-    sequence = apps[app_index].macros[key_number][2]
+    sequence = apps[app_index].macros[key_number][2] if key_number < 12 else []
     if pressed:
         # 'sequence' is an arbitrary-length list, each item is one of:
         # Positive integer (e.g. Keycode.KEYPAD_MINUS): key pressed
@@ -138,9 +171,19 @@ while True:
         # String (e.g. "Foo"): corresponding keys pressed & released
         # List []: one or more Consumer Control codes (can also do float delay)
         # Dict {}: mouse buttons/motion (might extend in future)
-        if key_number < 12: # No pixel for encoder button
+        if not sleeping and key_number < 12: # No pixel for encoder button
             macropad.pixels[key_number] = 0xFFFFFF
             macropad.pixels.show()
+        elif key_number is 12:
+            if sleeping is False:
+                screen.sleep()
+                switches.sleep()
+                sleeping = True
+            else:
+                screen.resume()
+                switches.resume()
+                sleeping = False
+
         for item in sequence:
             if isinstance(item, int):
                 if item >= 0:
