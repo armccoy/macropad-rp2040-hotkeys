@@ -2,6 +2,7 @@
 
 from adafruit_hid.keycode import Keycode
 from adafruit_hid.consumer_control_code import ConsumerControlCode
+import keyconfig
 
 app = {
     'name' : 'Zoom', # Application name
@@ -16,12 +17,12 @@ app = {
         (0x002000, 'Share', [Keycode.COMMAND, Keycode.SHIFT, Keycode.S]),
         (0x000754, 'Leave', [Keycode.COMMAND, Keycode.W]),
         # 3rd row ----------
-        (0x000000, '[=====]', []),
-        (0x000000, '[=====]', []),
-        (0x000000, '[=====]', []),
+        (0x000000, keyconfig.KEY_BLANK, []),
+        (0x000000, keyconfig.KEY_BLANK, []),
+        (0x000000, keyconfig.KEY_BLANK, []),
         # 4th row ----------
-        (0x200000, 'Mute', [[ConsumerControlCode.MUTE]]),
-        (0x080F54, 'Vol-', [[ConsumerControlCode.VOLUME_DECREMENT]]),
-        (0x080F54, 'Vol+', [[ConsumerControlCode.VOLUME_INCREMENT]])
+        (0x200000, keyconfig.KEY_MUTE, [[ConsumerControlCode.MUTE]]),
+        (0x080F54, keyconfig.KEY_VOL_DOWN, [[ConsumerControlCode.VOLUME_DECREMENT]]),
+        (0x080F54, keyconfig.KEY_VOL_UP, [[ConsumerControlCode.VOLUME_INCREMENT]])
     ]
 }
