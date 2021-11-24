@@ -8,13 +8,13 @@ app = {
     'macros' : [
         # COLOR    LABEL    KEY SEQUENCE
         # 1st row ----------
-        (0x000000, keyconfig.KEY_BLANK, []),
-        (0x000000, keyconfig.KEY_BLANK, []),
-        (0x000000, keyconfig.KEY_BLANK, []),
+        (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
+        (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
+        (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
         # 2nd row ----------
-        (0x000000, keyconfig.KEY_BLANK, []),
-        (0x000000, keyconfig.KEY_BLANK, []),
-        (0x000000, keyconfig.KEY_BLANK, []),
+        (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
+        (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
+        (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
         # 3rd row ----------
         (0x200000, keyconfig.KEY_MUTE, [[ConsumerControlCode.MUTE]]),
         (0x080F54, keyconfig.KEY_VOL_DOWN, [[ConsumerControlCode.VOLUME_DECREMENT]]),

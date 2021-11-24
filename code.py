@@ -14,6 +14,7 @@ import terminalio
 from adafruit_display_shapes.rect import Rect
 from adafruit_display_text import label
 from adafruit_macropad import MacroPad
+import keyconfig
 
 
 # CONFIGURABLES ------------------------
@@ -172,8 +173,11 @@ while True:
         # List []: one or more Consumer Control codes (can also do float delay)
         # Dict {}: mouse buttons/motion (might extend in future)
         if not sleeping and key_number < 12: # No pixel for encoder button
-            macropad.pixels[key_number] = 0xFFFFFF
-            macropad.pixels.show()
+            if group[key_number].text is keyconfig.KEY_BLANK:  # Don't flash LED when blank keys are pressed
+                macropad.pixels[key_number] = keyconfig.LED_BLANK
+            else:
+                macropad.pixels[key_number] = keyconfig.LED_PRESS
+                macropad.pixels.show()
         elif key_number is 12:
             if sleeping is False:
                 screen.sleep()
