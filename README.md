@@ -7,6 +7,7 @@ Currently, the following macro sets are included:
 - Universal numpad
 - Media Control Hotkeys (MacOS)
 - Zoom Hotkeys (MacOS)
+- Webex Hotkeys (MacOS)
 
 ## Configuration
 
