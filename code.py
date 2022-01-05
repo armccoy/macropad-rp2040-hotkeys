@@ -35,7 +35,7 @@ class App:
     def switch(self):
         """ Activate application settings; update OLED labels and LED
             colors. """
-        group[13].text = self.name   # Application name
+        group[13].text = self.name.upper()   # Application name
         for i in range(12):
             if i < len(self.macros): # Key in use, set label + LED color
                 macropad.pixels[i] = self.macros[i][0]
