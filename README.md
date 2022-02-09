@@ -8,6 +8,7 @@ Currently, the following macro sets are included:
 - Media Control Hotkeys (MacOS)
 - Zoom Hotkeys (MacOS)
 - Webex Hotkeys (MacOS)
+- MS Teams (MacOS)
 - Discord (Win)
 - [Sea of Thieves](https://www.seaofthieves.com/) (Win)
 
