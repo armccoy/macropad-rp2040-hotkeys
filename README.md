@@ -6,8 +6,8 @@ Currently, the following macro sets are included:
 
 - Universal numpad
 - Media Control Hotkeys (MacOS)
-- Zoom Hotkeys (MacOS)
-- Webex Hotkeys (MacOS)
+- Zoom (MacOS)
+- Webex (MacOS)
 - MS Teams (MacOS)
 - Discord (Win)
 - [Sea of Thieves](https://www.seaofthieves.com/) (Win)
