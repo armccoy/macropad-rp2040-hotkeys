@@ -9,6 +9,7 @@ Currently, the following macro sets are included:
 - Zoom (MacOS)
 - Webex (MacOS)
 - MS Teams (MacOS)
+- Google Meet (MacOS)
 - Discord (Win)
 - [Sea of Thieves](https://www.seaofthieves.com/) (Win)
 
