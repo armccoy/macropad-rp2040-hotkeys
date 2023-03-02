@@ -4,14 +4,15 @@ A growing collection of [CircuitPython](https://circuitpython.org/board/adafruit
 
 Currently, the following macro sets are included:
 
-- Universal numpad
-- Media Control Hotkeys (MacOS)
-- Zoom (MacOS)
-- Webex (MacOS)
-- MS Teams (MacOS)
-- Google Meet (MacOS)
-- Discord (Win)
-- [Sea of Thieves](https://www.seaofthieves.com/) (Win)
+- `discord.py` - Discord (Win)
+- `garageband.py` - Garageband (MacOS)
+- `googlemeet.py` - Google Meet (MacOS)
+- `media.py` - Media Control Hotkeys (MacOS)
+- `numpad.py` - Universal numpad
+- `sea-of-thieves` - [Sea of Thieves](https://www.seaofthieves.com/) (Win)
+- `teams.py` - MS Teams (MacOS)
+- `webex.py` - Webex (MacOS)
+- `zoom.py` - Zoom (MacOS)
 
 ## Configuration
 
@@ -20,7 +21,7 @@ The `macros/` directory contains the collection of macros, each set in its own f
 - The name of the application that the macro targets
 - List of macros, sorted by row
 
-Any new macros added to the `macros/` directory will be scanned and included when the device boots.
+Any new macros added to the `macros/` directory will be scanned and included when the device boots. Also note that macros are loaded in alphabetical order, so prepending each macro's filename with a numeral (e.g. `1_`, `2_`, etc.) is a handy way to bring your favorite macros to the top.
 
 The `lib/` directory contains the necessary Adafruit Macropad libraries. See the README in the `lib/` directory in this project for more information.
 
