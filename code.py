@@ -56,14 +56,12 @@ class Screen:
         self.display.auto_refresh = False
 
     def sleep(self):
-        self.display.auto_brightness = False
         self.display.brightness = 0
         self.display.show(displayio.Group())
         self.display.refresh()
 
     def resume(self):
         self.display.brightness = 1
-        self.display.auto_brightness = True
         self.display.show(group)
         self.display.refresh()
 
