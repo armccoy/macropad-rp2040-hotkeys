@@ -9,7 +9,7 @@ app = {
     'macros' : [
         # COLOR    LABEL    KEY SEQUENCE
         # 1st row ----------
-        (0x540908, 'Audio', [Keycode.CONTROL, Keycode.OPTION, Keycode.M]),
+        (0x540908, 'Mic', [Keycode.CONTROL, Keycode.OPTION, Keycode.M]),
         (keyconfig.LED_BLANK, keyconfig.KEY_BLANK, []),
         (0x04541B, 'Video', [Keycode.CONTROL, Keycode.OPTION, Keycode.V]),
         # 2nd row ----------
