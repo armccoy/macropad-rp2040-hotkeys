@@ -13,6 +13,7 @@ The libraries currently required by this repository include:
 - adafruit_macropad.mpy
 - adafruit_midi
 - adafruit_simple_text_display.mpy
+- adafruit_ticks.mpy
 - neopixel.mpy
 
 These libraries are individually licensed in each of their GitHub repositories and are provided by Adafruit under the MIT license (see also [LICENSE](./LICENSE) in this directory)

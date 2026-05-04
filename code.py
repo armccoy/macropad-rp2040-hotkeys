@@ -112,7 +112,7 @@ group.append(
         anchor_point=(0.5, -0.2)
     )
 )
-macropad.display.show(group)
+macropad.display.root_group = group
 
 # Load all the macro key setups from .py files in MACRO_FOLDER
 apps = []
